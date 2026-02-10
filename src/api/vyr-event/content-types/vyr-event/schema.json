@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vyr_events",
+  "info": {
+    "singularName": "vyr-event",
+    "pluralName": "vyr-events",
+    "displayName": "Vyr Event"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "start_date": {
+      "type": "date",
+      "required": true
+    },
+    "end_date": {
+      "type": "date"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
