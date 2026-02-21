@@ -430,65 +430,6 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiAboutVyrAboutVyr extends Struct.SingleTypeSchema {
-  collectionName: 'about_vyrs';
-  info: {
-    displayName: 'About Vyr';
-    pluralName: 'about-vyrs';
-    singularName: 'about-vyr';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.Blocks;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::about-vyr.about-vyr'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiVyrDefaultRulesetVyrDefaultRuleset
-  extends Struct.SingleTypeSchema {
-  collectionName: 'vyr_default_rulesets';
-  info: {
-    displayName: 'Vyr Default Ruleset';
-    pluralName: 'vyr-default-rulesets';
-    singularName: 'vyr-default-ruleset';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    body: Schema.Attribute.Blocks;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::vyr-default-ruleset.vyr-default-ruleset'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiVyrEventVyrEvent extends Struct.CollectionTypeSchema {
   collectionName: 'vyr_events';
   info: {
@@ -1030,8 +971,6 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::about-vyr.about-vyr': ApiAboutVyrAboutVyr;
-      'api::vyr-default-ruleset.vyr-default-ruleset': ApiVyrDefaultRulesetVyrDefaultRuleset;
       'api::vyr-event.vyr-event': ApiVyrEventVyrEvent;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
