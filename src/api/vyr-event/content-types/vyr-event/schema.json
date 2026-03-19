@@ -23,6 +23,12 @@
     },
     "description": {
       "type": "text"
+    },
+    "link": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
     }
   }
 }

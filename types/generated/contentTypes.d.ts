@@ -446,12 +446,14 @@ export interface ApiVyrEventVyrEvent extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
     end_date: Schema.Attribute.Date;
+    link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::vyr-event.vyr-event'
     > &
       Schema.Attribute.Private;
+    location: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     start_date: Schema.Attribute.Date & Schema.Attribute.Required;
     title: Schema.Attribute.String;
